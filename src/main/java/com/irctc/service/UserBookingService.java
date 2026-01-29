@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.irctc.entities.TicketDetails;
 import com.irctc.entities.TrainDetails;
 import com.irctc.entities.UserDetails;
+import com.irctc.util.UserServiceUtil;
 
 public class UserBookingService {
 
@@ -22,7 +23,7 @@ public class UserBookingService {
     
     private UserDetails user;
     
-    private final String USER_FILE_PATH = "IRCTC\src\main\java\com\irctc\localDB\user.json";
+    private final String USER_FILE_PATH = "../localDB/user.json";
     
     // parameterize constructor
     private UserBookingService(UserDetails user) throws IOException{
@@ -88,7 +89,7 @@ public class UserBookingService {
     		return Boolean.FALSE;
     	}
     	
-    	boolean removed = user.getTicketsBooked().removeIf(ticketId -> ticketId.getTicketId().equals(ticketId));
+    	boolean removed = user.getTicketsBooked().removeIf(ticket -> ticket.getTicketId().equals(ticketId));
     	
     	if (removed) {
             System.out.println("Ticket with ID " + ticketId + " has been canceled.");
