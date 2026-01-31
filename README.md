@@ -12,5 +12,8 @@ Implemented login and signup, fetching user ticket details, cancelation of ticke
 Fixing Entities UserDetail,TicketDetail,TrainDetail
 Implementing TrainService 
 
+#Day 4
+Implementing TrainService
+Fixing All files.
 
-As of 30 of Jan 2026, project not completed yet....
+As of 31 of Jan 2026, project is completed for its core working....
